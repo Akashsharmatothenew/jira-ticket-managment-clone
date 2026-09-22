@@ -1,0 +1,6 @@
+# Backend local overrides
+.env
+.env.*
+!.env.example
+target/
+*.log

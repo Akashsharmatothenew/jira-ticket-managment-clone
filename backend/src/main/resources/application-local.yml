@@ -1,0 +1,25 @@
+# Local development against PostgreSQL (DEC-002/DEC-006 runtime durability).
+# Provide credentials via environment variables. Do not put real secrets in this file.
+#
+# Example (shell — values are local-only examples, not production secrets):
+#   export DB_URL=jdbc:postgresql://localhost:5432/ticket_management
+#   export DB_USERNAME=ticket
+#   export DB_PASSWORD=your-local-password
+#
+# Run:
+#   mvn -f backend/pom.xml spring-boot:run -Dspring-boot.run.profiles=local
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/ticket_management}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true

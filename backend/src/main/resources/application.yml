@@ -1,0 +1,21 @@
+# Shared defaults. Profile-specific settings live in application-local.yml / application-test.yml.
+# Activate local with: --spring.profiles.active=local
+# Credentials must come from environment variables — never commit real secrets.
+
+spring:
+  application:
+    name: ticket-management
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8080

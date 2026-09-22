@@ -1,0 +1,47 @@
+# Root .gitignore — Support Ticket Management System
+
+# Secrets / local env (SEC-001 / AC-015)
+.env
+.env.*
+!.env.example
+**/application-local-secrets.yml
+**/application-secret*.yml
+
+# Maven / Java
+**/target/
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/*.log
+hs_err_pid*
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+.project
+.classpath
+.settings/
+.factorypath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node / frontend (future)
+**/node_modules/
+**/.next/
+**/out/
+**/dist/
+npm-debug.log*
+yarn-error.log*
+
+# Coverage / reports
+**/coverage/
+**/htmlcov/
+**/.nyc_output/
